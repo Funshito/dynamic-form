@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" id="myForm">
+            <h1> Contact Us</h1>
+            <div class="firstDiv">
+                <div class="nameDiv">
+                    <label for="firstname" required>First Name</label>
+                    <input type="text" name="firstname" id="firstname" >
+                    <span class="error" id="error-firstname">This field is required</span>
+                </div>
+
+                <div class="nameDiv2 nameDiv">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname">
+                    <span class="error" id="error-lastname">This field is required</span>
+                </div>
+            </div>
+            <div class="emailDiv">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email">
+
+                <!-- <span class="error" id="error-emailInvalid">Please enter a valid email address</span> -->
+                <span class="error" id="error-email">This field is required</span>
+            </div>
+
+
+            
+            <!-- Query section -->
+            <div>
+                <label for="Query">Query Type</label>
+                <div class="radioMainDiv">
+                    <div class="radioDiv">
+                        <input type="radio" value="General Enquiry" name="Query" id="query">
+                        <label>General Enquiry</label>
+                    </div>
+
+                    <div class="radioDiv">
+                        <input type="radio" value="Support Request" name="Query" id="query">
+                        <label>Support Request</label>
+                    </div>
+                </div>
+                <span class="error" id="error-query">Please select a query type</span>
+            </div>
+
+            <div class="messageDiv">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+                <span class="error" id="error-message">This field is required</span>
+            </div>
+
+            <div class="CheckDiv">
+                <input type="checkbox" name="check" id="check">
+                <p>I consent to being contacted by the team</p>
+            </div>
+            <span class="error" id="error-check">To submit this form, please consent to being contacted</span>
+
+            <button onclick="onChange()" type="submit">submit</button>
+        </form>
+    </div>
+
+    <!-- Success Message Alert -->
+    <div class="alert" id="alert">
+        <div class="alertMessage">
+            <div class="hm">
+                <img src="/images/icon-success-check.svg" alt="success-check">
+                <h4>
+                    Message Sent!
+                </h4>
+            </div>
+            <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+    </div>
+</body>
+<script src="form.js"></script>
+
+</html>
